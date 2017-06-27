@@ -17,4 +17,15 @@ class AnswerRepository
     {
         return Answer::create($attribute);
     }
+
+    public function byId($id)
+    {
+        return Answer::find($id);
+    }
+
+    public function getAnswerCommentsById($id)
+    {
+        $answer = Answer::with('comments','comments.user')->where('id',$id)->first();
+        return $answer->comments;
+    }
 }

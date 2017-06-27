@@ -9,8 +9,15 @@ use Auth;
 
 class QuestionsController extends Controller
 {
+    /**
+     * @var QuestionRepository
+     */
     protected $questionRepository;
 
+    /**
+     * QuestionsController constructor.
+     * @param QuestionRepository $questionRepository
+     */
     public function __construct(QuestionRepository $questionRepository)
     {
         $this->middleware('auth')->except(['index', 'show']);
@@ -132,6 +139,7 @@ class QuestionsController extends Controller
 
         abort(403,'Forbidden');
     }
+
 
 
 }
