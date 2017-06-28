@@ -8,20 +8,35 @@ use Auth;
 
 class QuestionFollowController extends Controller
 {
+    /**
+     * @var QuestionRepository
+     */
     protected $question;
 
+    /**
+     * QuestionFollowController constructor.
+     * @param QuestionRepository $question
+     */
     public function __construct(QuestionRepository $question)
     {
         $this->middleware('auth');
         $this->question = $question;
     }
 
+    /**
+     * @param $question
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function follow($question)
     {
         Auth::user()->followThis($question);
         return back();
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function follower(Request $request)
     {
 
@@ -31,6 +46,10 @@ class QuestionFollowController extends Controller
         return response()->json(['followed' => false]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function followThisQuestion(Request $request)
     {
         $question = $this->question->byId($request->get('question'));

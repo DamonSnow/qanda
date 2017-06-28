@@ -55,13 +55,7 @@
             return {
                 body:'',
                 comments: [],
-                newComment:{
-                    user:{
-                        name:Qanda.name,
-                        avatar:Qanda.avatar
-                    },
-                    body:''
-                }
+
             }
         },
         computed:{

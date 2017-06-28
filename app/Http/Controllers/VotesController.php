@@ -8,6 +8,9 @@ use Auth;
 
 class VotesController extends Controller
 {
+    /**
+     * @var AnswerRepository
+     */
     protected $answer;
 
     /**
@@ -19,6 +22,10 @@ class VotesController extends Controller
         $this->answer = $answer;
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function users($id)
     {
 
@@ -28,6 +35,9 @@ class VotesController extends Controller
         return response()->json(['voted' => false]);
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function vote()
     {
 

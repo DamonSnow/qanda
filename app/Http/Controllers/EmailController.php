@@ -9,6 +9,10 @@ use Auth;
 class EmailController extends Controller
 {
     //
+    /**
+     * @param $token
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function verify($token)
     {
         $user = User::where('confirmation_token',$token)->first();

@@ -54,7 +54,9 @@
                     this.body = '';
                     setTimeout(function () {
                         $('#modal-access-token').modal('hide');
-                    },2000)
+                        this.status = false;
+                    }.bind(this),2000);
+
                 })
             },
             showSendMessageForm() {

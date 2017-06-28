@@ -14,6 +14,10 @@ use Request;
 
 class TopicRepository
 {
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function getTopicsForTagging(Request $request)
     {
         $topic = Topic::select(['id', 'name'])

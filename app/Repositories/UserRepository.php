@@ -13,6 +13,10 @@ use App\User;
 
 class UserRepository
 {
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function byId($id)
     {
         return User::find($id);

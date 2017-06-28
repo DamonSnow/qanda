@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class TopicsController extends Controller
 {
+    /**
+     * @var TopicRepository
+     */
     protected $topic;
 
     /**
@@ -18,6 +21,10 @@ class TopicsController extends Controller
         $this->topic = $topic;
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function index(Request $request)
     {
         return $this->topic->getTopicsForTagging($request);
