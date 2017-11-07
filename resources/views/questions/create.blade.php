@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
+@include('vendor.ueditor.assets')
 @section('content')
-    @include('vendor.ueditor.assets')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -13,7 +12,7 @@
                         <form action="/questions" method="post">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                <lable for="title">标题</lable>
+                                {{--<lable for="title">标题</lable>--}}
                                 <input type="text" value="{{ old('title') }}" name="title" class="form-control" placeholder="标题" id="title">
                                 @if ($errors->has('title'))
                                     <span class="help-block">
@@ -44,7 +43,6 @@
     </div>
 
     <!-- 实例化编辑器 -->
-
 
 
 @endsection

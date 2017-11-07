@@ -66,7 +66,7 @@ class QuestionsController extends Controller
 
         $question->topics()->attach($topics);
 
-        return redirect()->route('questions.show', [$question->id]);
+        return redirect()->route('question.show', [$question->id]);
     }
 
     /**

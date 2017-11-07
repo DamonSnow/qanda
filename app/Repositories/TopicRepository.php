@@ -9,7 +9,7 @@
 namespace App\Repositories;
 
 use App\Topic;
-use Request;
+use Illuminate\Http\Request;
 
 
 class TopicRepository
